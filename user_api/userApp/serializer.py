@@ -6,7 +6,6 @@ class UserSerializer(serializers.ModelSerializer):
     """
     Serializes the data of a user.
     """
-
     class Meta:
         """
         Meta subclass to define fields.
@@ -15,11 +14,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email']
         read_only_fields = ('id',)
 
+
 class ProfileSerializer(serializers.ModelSerializer):
     """
     Serializes the data of a profile.
     """
-
     user = UserSerializer()
 
     class Meta:

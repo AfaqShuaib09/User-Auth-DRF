@@ -16,7 +16,7 @@ class Profile(models.Model):
                                         help_text='your contact number in the following format: +xxxxxxxxxxx',
                                         validators=[ CONTACT_NO_VALIDATOR ], blank=True)
     address = models.TextField(help_text='your address', blank=True)
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default='', blank=True)
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default='', blank=True)
     country = CountryField(blank_label='(select country)', help_text='your country', blank=True)
 
     def __str__(self):
