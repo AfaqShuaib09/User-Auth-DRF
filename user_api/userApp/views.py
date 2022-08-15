@@ -1,9 +1,11 @@
-from rest_framework import viewsets, mixins
 from django.contrib.auth.models import User
-from userApp.serializer import UserSerializer, ProfileSerializer, UpdateProfileSerializer
-from userApp.models import Profile
+from rest_framework import mixins, status, viewsets
 from rest_framework.response import Response
-from rest_framework import status
+
+from userApp.models import Profile
+from userApp.serializer import (ProfileSerializer, UpdateProfileSerializer,
+                                UserSerializer)
+
 
 # Create your views here.
 class UserViewSet(viewsets.GenericViewSet, mixins.RetrieveModelMixin, mixins.ListModelMixin):

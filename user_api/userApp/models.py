@@ -5,6 +5,7 @@ from django_countries.fields import CountryField
 from userApp.constant import (CNIC_VALIDATOR, CONTACT_NO_VALIDATOR,
                               GENDER_CHOICES)
 
+
 # Create your models here.
 class Profile(models.Model):
     ''' User Profile Model '''
