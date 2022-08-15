@@ -1,3 +1,4 @@
+''' Serialization classes for the models used in the userApp application '''
 from django.contrib.auth.models import User
 from rest_framework import serializers
 

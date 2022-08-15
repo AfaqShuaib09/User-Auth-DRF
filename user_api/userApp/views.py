@@ -1,3 +1,4 @@
+""" Viewsets declaration for the userApp application """
 from django.contrib.auth.models import User
 from rest_framework import mixins, status, viewsets
 from rest_framework.response import Response
@@ -53,30 +54,3 @@ class ProfileViewSet(viewsets.ModelViewSet):
         Returns the serializer class for the viewset
         """
         return UpdateProfileSerializer if self.action == 'update' else self.serializer_class
-
-
-# {
-#         "username": "Faateh",
-#         "profile": {
-#             "full_name": "Faateh Sultan",
-#             "cnic": "35202-2567834-3",
-#             "contact_number": "+923064416400",
-#             "address": "30 Huma Block",
-#             "gender": "Male",
-#             "country": "PK"
-#         }
-# }
-
-# {
-#     "user": {
-#         "id" : 3,
-#         "username" : "Faateh",
-#         "email" : "faatehnigga@gmail.com"
-#     }
-#     "full_name": "Faateh Sultan",
-#     "cnic": "35202-2567834-3",
-#     "contact_number": "+923064416400",
-#     "address": "30 Huma Block",
-#     "gender": "Male",
-#     "country": "PK"
-# }
