@@ -8,7 +8,8 @@ from userApp.constant import (CNIC_VALIDATOR, CONTACT_NO_VALIDATOR,
 # Create your models here.
 class Profile(models.Model):
     ''' User Profile Model '''
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
+    #user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100, help_text='your full name', blank=True)
     cnic = models.CharField(max_length=15 , help_text='your CNIC in the following format: xxxxx-xxxxxxx-x',
                             validators=[ CNIC_VALIDATOR ], blank=True)

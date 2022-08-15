@@ -1,6 +1,8 @@
+import profile
+import pdb 
 from rest_framework import viewsets, mixins
 from django.contrib.auth.models import User
-from userApp.serializer import UserSerializer, ProfileSerializer
+from userApp.serializer import UserSerializer, ProfileSerializer, CreateProfileSerializer
 from userApp.models import Profile
 
 # Create your views here.
@@ -22,3 +24,15 @@ class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
     lookup_field = 'user__username'
+
+
+class CreateProfileViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
+    """
+    API endpoint that allows users to be viewed , created, updated or deleted.
+    """
+    pdb.set_trace()
+    queryset = Profile.objects.all()
+    serializer_class = CreateProfileSerializer
+
+    def get_serializer_class(self):
+        return CreateProfileSerializer if self.request.method == 'POST' else ProfileSerializer
