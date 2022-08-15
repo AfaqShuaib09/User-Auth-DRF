@@ -28,3 +28,15 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ['user', 'full_name', 'cnic', 'contact_number', 'address', 'gender', 'country']
         read_only_fields = ('user',)
+
+class UpdateProfileSerializer(serializers.ModelSerializer):
+    """
+    Serializes the data of a profile.
+    """
+    class Meta:
+        """
+        Meta subclass to define fields.
+        """
+        model = Profile
+        fields = ['full_name', 'cnic', 'contact_number', 'address', 'gender', 'country']
+        read_only_fields = ('user',)
